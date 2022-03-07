@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, Flex, HStack, Image, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 
 export default function Produto({pd, carrinho, setCarrinho}) {
@@ -22,16 +22,23 @@ export default function Produto({pd, carrinho, setCarrinho}) {
    }
     return (
     <Flex 
+        justify="space-between"
         alignSelf={"flex-start"}
         align={"center"}
         direction="column"
-        shadow="2xl"
+        shadow="dark-lg"
         bgImage="https://i.pinimg.com/564x/4d/b7/ec/4db7ecf38ef6908f3382e560722c0f17.jpg"
         backgroundSize={"cover"}
         p="5"
+        transition=".5s"
+        filter="brightness(0.9)"
+        _hover={{
+            filter: "brightness(1.1)"
+        }}
     >
-        <Box>
-            <Image src={info.img}  w="100px"/>
+        <Box
+        >
+            <Image src={info.img}  w="100px" h="100px"/>
         </Box>
         <Box>
             <Text
@@ -40,11 +47,15 @@ export default function Produto({pd, carrinho, setCarrinho}) {
             >{info.nome}</Text>
         </Box>
         
-        <VStack fontSize={20}>
+        <VStack fontSize={18}>
             
-                <Box>
-                    <Text >{ (info.preco/100).toFixed(2)}</Text>
-                </Box>           
+                <HStack>
+                    <Text>R$ </Text>
+                    <Text 
+                        fontWeight="bold"
+                        color={"green.500"}
+                    >{ (info.preco/100).toFixed(2)}</Text>
+                </HStack>           
             <Button colorScheme={"blue"}
                 onClick={async (e)=>{
                     adicionar();
