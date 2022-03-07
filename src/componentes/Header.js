@@ -8,15 +8,17 @@ export default function Header({info}) {
     return (
         <Box
             mb="5"
-            bg="rgba(0,0,0,0.15)"
+            bg="#9932cc2E"
             px={10}
             py={3}
             boxSizing="border-box"
-            minH={50}
+            w="70%"
+            m="auto"
         >
         <HStack
             justify="space-between"
             align={"center"}
+           
         >
             <Box>
                 <Image src='./IMG/logo.png'

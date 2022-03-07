@@ -71,15 +71,17 @@ export default function Cart( {info} ) {
                              shadow={"inner"}
                         >
                             <HStack
-                                justify="space-around"
+                                justify="space-between"
                                 w="100%"
                             >
-                                <Box>
+                                <Box
+                                    fontWeight={"bold"}
+                                >
                                     <Text>
                                         Total: 
                                     </Text>
                                     <Text
-                                        color='green.800'
+                                        color='green.600'
                                     >
                                         R$ 
                                         {carrinho.reduce((total,elem)=>{

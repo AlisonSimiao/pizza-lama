@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, HStack } from '@chakra-ui/react'
 import React from 'react'
 import { useEffect, useState } from 'react'
 import Produto from './Produto'
@@ -14,18 +14,20 @@ export default function Main({info}) {
   },[])
 
   return (
-    <Box
-      my="10"
-      w="80vw"
-      m="auto"
+    <HStack
+      justify={"center"}
+      mt="5"
     >
         <Flex
           wrap="wrap"
-          justify="space-around"
-          width="80%"
-          h="85vh"
-          gap={5}
-          shadow="2xl"
+          justify="space-between"
+          align="flex-start"
+          bg="#9932cc2E"
+          width="70%"
+          h="80vh"
+          gap={10}
+          p="5"
+          shadow="inner"
           overflowY="scroll"
           sx={{
             '&::-webkit-scrollbar': {
@@ -43,6 +45,6 @@ export default function Main({info}) {
               return <Produto key={pizza.id} pd={pizza} carrinho={carrinho} setCarrinho={setCarrinho}/>
           })}
         </Flex>
-    </Box>
+    </HStack>
   )
 }

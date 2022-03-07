@@ -1,7 +1,7 @@
 import { Box, Button, HStack, Image, Text, VStack } from '@chakra-ui/react';
 import React from 'react'
 
-export default function Card_Drawer({produto,setCarrinho, carrinho}) {
+export default function Card_Drawer({produto, setCarrinho, carrinho}) {
   
 
   return(
@@ -39,11 +39,17 @@ export default function Card_Drawer({produto,setCarrinho, carrinho}) {
             const aux = carrinho; 
             produto.qtd++;
             setCarrinho([...aux]);
-            console.log(produto.qtd)
+            
           }}
         >+</Button>
         <Text> {produto.qtd} </Text>
-        <Button>-</Button>
+        <Button
+          onClick={ (e)=>{
+            const aux = carrinho; 
+            produto.qtd = (produto.qtd >0? produto.qtd-1: 0);
+            setCarrinho([...aux]);
+          }}
+        >-</Button>
       </HStack>
       </VStack>
       

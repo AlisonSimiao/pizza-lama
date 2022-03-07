@@ -22,24 +22,25 @@ export default function Produto({pd, carrinho, setCarrinho}) {
    }
     return (
     <Flex 
-               
-        justify="space-around"
+        alignSelf={"flex-start"}
         align={"center"}
         direction="column"
         shadow="2xl"
-        px={50}
         bgImage="https://i.pinimg.com/564x/4d/b7/ec/4db7ecf38ef6908f3382e560722c0f17.jpg"
         backgroundSize={"cover"}
-        p="10"
+        p="5"
     >
         <Box>
             <Image src={info.img}  w="100px"/>
         </Box>
         <Box>
-            <Text>{info.nome}</Text>
+            <Text
+                textTransform={"uppercase"}
+                fontWeight="bold"
+            >{info.nome}</Text>
         </Box>
         
-        <VStack fontSize={30}>
+        <VStack fontSize={20}>
             
                 <Box>
                     <Text >{ (info.preco/100).toFixed(2)}</Text>
