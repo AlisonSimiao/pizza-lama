@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, HStack, Image, Input, Text, useDisclosure, VStack } from '@chakra-ui/react'
+import { Badge, Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, HStack, Image, Text, useDisclosure, VStack } from '@chakra-ui/react'
 import { useRef} from 'react';
 import Card_Drawer from './Card_Drawer';
 
@@ -18,13 +18,15 @@ export default function Cart( {info} ) {
                     w={70}
                     h={50}
                     p={1}
+                    
                 >
                     <Image src='./IMG/cart.png'
                         alt="cart"
                         h="100%"
-                        filter="invert(1)"
+                        filter="blur(.7px) contrast(0%)"
+                        transition=".5s"
                         _hover={{
-                            filter: "invert(0)"
+                            filter: "blur(0) contrast(100%)"
                         }}
                     />
                     <Box
